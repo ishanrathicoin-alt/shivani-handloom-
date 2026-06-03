@@ -66,42 +66,44 @@
   updateNavbar();
 })();
 
-/* ---------- MOBILE MENU ---------- */
-(function initMobileMenu() {
-  var hamburger = document.getElementById('hamburger');
-  var mobileMenu = document.getElementById('mobileMenu');
-  var mobileClose = document.getElementById('mobileClose');
-  var mobileLinks = document.querySelectorAll('.mobile-nav-link');
+/* ---------- SIDE DRAWER ---------- */
+(function initSideDrawer() {
+  var hamburger = document.getElementById('navHamburger');
+  var drawer    = document.getElementById('sideDrawer');
+  var backdrop  = document.getElementById('drawerBackdrop');
+  var closeBtn  = document.getElementById('drawerClose');
+  var drawerLinks = document.querySelectorAll('.drawer-link');
 
-  if (!hamburger || !mobileMenu) return;
+  if (!hamburger || !drawer) return;
 
-  function openMenu() {
-    mobileMenu.classList.add('open');
+  function openDrawer() {
+    drawer.classList.add('open');
+    if (backdrop) backdrop.classList.add('open');
     hamburger.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
   }
 
-  function closeMenu() {
-    mobileMenu.classList.remove('open');
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
 
-  hamburger.addEventListener('click', openMenu);
+  hamburger.addEventListener('click', openDrawer);
 
-  if (mobileClose) {
-    mobileClose.addEventListener('click', closeMenu);
-  }
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  if (backdrop) backdrop.addEventListener('click', closeDrawer);
 
-  // Close on nav link click
-  mobileLinks.forEach(function (link) {
-    link.addEventListener('click', closeMenu);
+  // Close on any drawer nav link click
+  drawerLinks.forEach(function (link) {
+    link.addEventListener('click', closeDrawer);
   });
 
   // Close on ESC key
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-      closeMenu();
+    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+      closeDrawer();
     }
   });
 })();
