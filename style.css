@@ -665,7 +665,7 @@ address { font-style: normal; }
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: #2E211D;
+  background-color: #EDE0CC;
   background-image: url('https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=1600&q=85&auto=format&fit=crop');
   background-size: cover;
   background-position: center 30%;
@@ -704,9 +704,10 @@ address { font-style: normal; }
   inset: 0;
   background: linear-gradient(
     105deg,
-    rgba(20,12,8,0.72) 0%,
-    rgba(20,12,8,0.55) 60%,
-    rgba(20,12,8,0.25) 100%
+    rgba(245,236,218,0.92) 0%,
+    rgba(237,224,204,0.80) 40%,
+    rgba(225,210,185,0.45) 70%,
+    rgba(200,180,150,0.10) 100%
   );
 }
 
@@ -758,7 +759,7 @@ address { font-style: normal; }
   font-weight: 600;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #7A5C3A;
   margin-bottom: 24px;
   display: block;
 }
@@ -773,7 +774,7 @@ address { font-style: normal; }
 .hero-h-line1 {
   display: block;
   font-size: clamp(3.5rem, 8.5vw, 9rem);
-  color: #fff;
+  color: #2E211D;
   letter-spacing: -0.01em;
 }
 
@@ -781,14 +782,14 @@ address { font-style: normal; }
   display: block;
   font-size: clamp(3rem, 7vw, 7.5rem);
   font-style: italic;
-  color: var(--gold);
+  color: #8B5E2A;
   letter-spacing: 0.02em;
 }
 
 .hero-sub {
   font-family: 'Lora', serif;
   font-size: clamp(0.9rem, 1.4vw, 1.05rem);
-  color: rgba(255,255,255,0.82);
+  color: rgba(46,33,29,0.80);
   max-width: 560px;
   line-height: 1.75;
   margin-bottom: 44px;
