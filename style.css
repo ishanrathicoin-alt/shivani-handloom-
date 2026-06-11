@@ -69,14 +69,6 @@ body {
   overflow-x: hidden;
 }
 
-body.intro-done {
-  overflow-y: auto;
-}
-
-body:not(.intro-done) {
-  overflow: hidden;
-}
-
 img, iframe, svg {
   display: block;
   max-width: 100%;

@@ -4,36 +4,6 @@
 
 'use strict';
 
-/* ---------- CINEMATIC INTRO ---------- */
-(function initIntro() {
-  var intro = document.getElementById('intro');
-  if (!intro) return;
-
-  // Auto-dismiss intro after 2800ms (faster = no blocking)
-  var dismissTimeout = setTimeout(function () {
-    dismissIntro();
-  }, 2800);
-
-  function dismissIntro() {
-    intro.style.opacity = '0';
-    intro.style.pointerEvents = 'none';
-    intro.style.userSelect = 'none';
-    document.body.classList.add('intro-done');
-    // Remove from DOM fully after fade
-    setTimeout(function () {
-      intro.style.display = 'none';
-      intro.setAttribute('aria-hidden', 'true');
-      intro.setAttribute('inert', '');
-    }, 850);
-  }
-
-  // Allow clicking intro to skip
-  intro.addEventListener('click', function () {
-    clearTimeout(dismissTimeout);
-    dismissIntro();
-  });
-})();
-
 /* ---------- NAVBAR SCROLL BEHAVIOR ---------- */
 (function initNavbar() {
   var navbar = document.getElementById('navbar');
